@@ -1,6 +1,7 @@
 package test;
 
 import java.util.ArrayList;
+///fdsfds
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
@@ -13,7 +14,7 @@ public class CollectionTest {
 	public static void main(String args[]){
 		
 		HashMap map = new HashMap();
-		
+		// fjdishfoids
 		Hashtable table = new Hashtable();
 		
 		HashSet set = new HashSet();
