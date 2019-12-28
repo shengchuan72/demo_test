@@ -1,7 +1,7 @@
 package test;
 
 import java.util.ArrayList;
-///fdsfds
+/// 冲突解决了吗
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Hashtable;
@@ -14,7 +14,7 @@ public class CollectionTest {
 	public static void main(String args[]){
 		
 		HashMap map = new HashMap();
-		// fjdishfoids
+		// fjdishfoids谁知道呢！
 		Hashtable table = new Hashtable();
 		
 		HashSet set = new HashSet();
