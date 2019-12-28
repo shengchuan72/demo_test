@@ -14,7 +14,7 @@ public class CollectionTest {
 	public static void main(String args[]){
 		
 		HashMap map = new HashMap();
-		// fjdish谁知道呢！
+		// fjdish谁知道呢！！
 		Hashtable table = new Hashtable();
 		
 		HashSet set = new HashSet();
