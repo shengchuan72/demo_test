@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.itcast.ssm.dao.mapper.UserMapper" >
+  <resultMap id="BaseResultMap" type="cn.itcast.ssm.po.User" >
+    <id column="id" property="id" jdbcType="INTEGER" />
+    <result column="ids" property="ids" jdbcType="INTEGER" />
+    <result column="username" property="username" jdbcType="VARCHAR" />
+    <result column="sex" property="sex" jdbcType="VARCHAR" />
+    <result column="birthday" property="birthday" jdbcType="DATE" />
+    <result column="address" property="address" jdbcType="VARCHAR" />
+    <result column="detail" property="detail" jdbcType="VARCHAR" />
+    <result column="score" property="score" jdbcType="REAL" />
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, ids, username, sex, birthday, address, detail, score
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from user
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from user
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.itcast.ssm.po.User" >
+    insert into user (id, ids, username, 
+      sex, birthday, address, 
+      detail, score)
+    values (#{id,jdbcType=INTEGER}, #{ids,jdbcType=INTEGER}, #{username,jdbcType=VARCHAR}, 
+      #{sex,jdbcType=VARCHAR}, #{birthday,jdbcType=DATE}, #{address,jdbcType=VARCHAR}, 
+      #{detail,jdbcType=VARCHAR}, #{score,jdbcType=REAL})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.itcast.ssm.po.User" >
+    insert into user
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="ids != null" >
+        ids,
+      </if>
+      <if test="username != null" >
+        username,
+      </if>
+      <if test="sex != null" >
+        sex,
+      </if>
+      <if test="birthday != null" >
+        birthday,
+      </if>
+      <if test="address != null" >
+        address,
+      </if>
+      <if test="detail != null" >
+        detail,
+      </if>
+      <if test="score != null" >
+        score,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="ids != null" >
+        #{ids,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        #{birthday,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null" >
+        #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null" >
+        #{score,jdbcType=REAL},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.itcast.ssm.po.User" >
+    update user
+    <set >
+      <if test="ids != null" >
+        ids = #{ids,jdbcType=INTEGER},
+      </if>
+      <if test="username != null" >
+        username = #{username,jdbcType=VARCHAR},
+      </if>
+      <if test="sex != null" >
+        sex = #{sex,jdbcType=VARCHAR},
+      </if>
+      <if test="birthday != null" >
+        birthday = #{birthday,jdbcType=DATE},
+      </if>
+      <if test="address != null" >
+        address = #{address,jdbcType=VARCHAR},
+      </if>
+      <if test="detail != null" >
+        detail = #{detail,jdbcType=VARCHAR},
+      </if>
+      <if test="score != null" >
+        score = #{score,jdbcType=REAL},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.itcast.ssm.po.User" >
+    update user
+    set ids = #{ids,jdbcType=INTEGER},
+      username = #{username,jdbcType=VARCHAR},
+      sex = #{sex,jdbcType=VARCHAR},
+      birthday = #{birthday,jdbcType=DATE},
+      address = #{address,jdbcType=VARCHAR},
+      detail = #{detail,jdbcType=VARCHAR},
+      score = #{score,jdbcType=REAL}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>
